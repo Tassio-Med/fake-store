@@ -13,6 +13,7 @@ export default function Home() {
 
     <Header/>
     <Store/>
+    <H.Copy>MKS Sistemas &copy; Todos os direitos reservados</H.Copy>
    </H.Home>
   )
 }
