@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Store = styled.div`
   width: 80%;
-  margin-top: 150px;
+  margin-top: 400px;
 `;
 
 export const ProductsGrid = styled.ul`
@@ -14,17 +14,43 @@ export const ProductsGrid = styled.ul`
   margin: 0;
 `;
 
-export const ProductItem = styled.li`
+export const Card = styled.div`
+  box-shadow: -1px 0px 9px -1px rgba(0,0,0,0.35);
   border: transparent;
   border-radius: 10px;
-  box-shadow: -2px 1px 16px 0px rgba(0,0,0,0.45);
-  padding: 10px;
+  overflow: hidden;
 `;
 
-export const Image = styled.div`
-  border-color: black;
-  height: 20%;
+export const ProductItem = styled.li`
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const Photo = styled.div`
+  background-color: blue;
+  height: 50%;
   width: 90%;
+  border-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+`;
+
+export const Details = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 9px;
+
+  h4 {
+    font-family: 'Montserrat-Thin', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+  }
 `;
 
 export const Price = styled.p`
@@ -38,17 +64,13 @@ export const Price = styled.p`
   color: #fff;
   font-weight: 700;
   font-size: 15px;
-  margin-left: 5px;
+  margin-left: 10px;
   white-space: nowrap;
 `;
 
-export const Details = styled.div`
-  display: flex;
-  justify-content: space-between;
-`;
 
 export const Alert = styled.p`
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat-Thin', sans-serif;
   font-size: 10px;
   margin: 20px 0;
 
@@ -65,8 +87,9 @@ export const BuyBtn = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0; 
 
-  &hover{
+  &:hover{
     background-color: #0F58BA;
   }
 

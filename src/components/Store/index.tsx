@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
+import Image from "next/image";
+import noPhoto from  "../../../public/assets/images/no-photo.png";
 import * as S from './styles';
 import { apiProducts } from '@/pages/services/api/api';
 import { Product } from '@/types/product.interface';
-import { FaRegImage } from 'react-icons/fa'
 import { FiShoppingBag } from 'react-icons/fi'
 
 
@@ -26,20 +27,27 @@ export default function Store() {
     <S.Store>
       <S.ProductsGrid>
         {products.map((product) => (
-          <S.ProductItem key={product.id}>
-            <S.Image>
-              <FaRegImage styles={{ fontSize: '50px' }}/>
-            </S.Image>
-            <S.Details>
-              <h4>{product.name}</h4>
-              <S.Price>R$ {product.price}</S.Price>
-            </S.Details>
-            <S.Alert>Redesigned from scratch and completely revised.</S.Alert>
+          <S.Card key={product.id}>
+            <S.ProductItem >
+              <S.Photo>
+                <Image
+                  src={noPhoto}
+                  alt='Não há imagem'
+                  height={100}
+                  priority
+                />
+              </S.Photo>
+              <S.Details>
+                <h4>{product.name}</h4>
+                <S.Price>R$ {product.price}</S.Price>
+              </S.Details>
+              <S.Alert>Redesigned from scratch and completely revised.</S.Alert>
+            </S.ProductItem>
             <S.BuyBtn>
-              <FiShoppingBag styles={{ fontSize: '24px', color: 'white' }}/>
+              <FiShoppingBag style={{ fontSize: '20px', color: 'white' }}/>
               <span>Comprar</span>
             </S.BuyBtn>
-          </S.ProductItem>
+          </S.Card>
         ))}
       </S.ProductsGrid>
     </S.Store>
