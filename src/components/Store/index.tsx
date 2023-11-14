@@ -35,7 +35,7 @@ export default function Store() {
                   alt='Não há imagem'
                   height={100}
                   priority
-                />
+                  />
               </S.Photo>
               <S.Details>
                 <h4>{product.name}</h4>
@@ -45,7 +45,7 @@ export default function Store() {
             </S.ProductItem>
             <S.BuyBtn>
               <FiShoppingBag style={{ fontSize: '20px', color: 'white' }}/>
-              <span>Comprar</span>
+              <span>COMPRAR</span>
             </S.BuyBtn>
           </S.Card>
         ))}

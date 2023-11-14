@@ -2,13 +2,13 @@ import styled from "styled-components";
 
 export const Store = styled.div`
   width: 80%;
-  margin-top: 400px;
+  margin-top: 560px;
 `;
 
 export const ProductsGrid = styled.ul`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  gap: 30px;
   list-style: none;
   padding: 0;
   margin: 0;
@@ -19,19 +19,22 @@ export const Card = styled.div`
   border: transparent;
   border-radius: 10px;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 `;
 
 export const ProductItem = styled.li`
   padding: 10px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  height: 100%;
 `;
 
 export const Photo = styled.div`
-  background-color: blue;
-  height: 50%;
+  height: 170px;
   width: 90%;
   border-color: red;
   display: flex;
@@ -72,7 +75,7 @@ export const Price = styled.p`
 export const Alert = styled.p`
   font-family: 'Montserrat-Thin', sans-serif;
   font-size: 10px;
-  margin: 20px 0;
+  margin: 7px 0;
 
 `;
 
@@ -88,9 +91,10 @@ export const BuyBtn = styled.button`
   justify-content: center;
   align-items: center;
   margin: 0; 
+  margin-top: auto;
 
   &:hover{
-    background-color: #0F58BA;
+    background-color: #0F74BA;
   }
 
   span{
