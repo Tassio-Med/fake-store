@@ -15,7 +15,7 @@ export const ProductsGrid = styled.ul`
 `;
 
 export const Card = styled.div`
-  box-shadow: -1px 0px 9px -1px rgba(0,0,0,0.35);
+  box-shadow: -1px 0px 9px -1px rgba(0,0,0,0.30);
   border: transparent;
   border-radius: 10px;
   overflow: hidden;
@@ -50,9 +50,10 @@ export const Details = styled.div`
   padding: 0 9px;
 
   h4 {
-    font-family: 'Montserrat-Thin', sans-serif;
+    font-family: 'Montserrat-Medium', sans-serif;
     font-size: 16px;
-    font-weight: 300;
+    font-weight: 400;
+    line-height: 19px;
   }
 `;
 
@@ -92,9 +93,10 @@ export const BuyBtn = styled.button`
   align-items: center;
   margin: 0; 
   margin-top: auto;
+  transition: background-color 0.4s ease;
 
   &:hover{
-    background-color: #0F74BA;
+    background-color: #07439C;
   }
 
   span{

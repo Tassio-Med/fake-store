@@ -20,8 +20,15 @@
 }
 
 @font-face {
-  font-family: 'Montserrat-Light';
+  font-family: 'Montserrat-Thin';
   src: url('../public/assets/fonts/Montserrat-Light.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat-Light';
+  src: url('../public/assets/fonts/Montserrat-Thin.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }

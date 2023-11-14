@@ -11,8 +11,14 @@ export const Home = styled.div`
 `;
 
 export const Copy = styled.h4`
-  font-size: 15px;
-  font-weight: 50;
+  display: flex;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14px;
   margin: 50px 0 50px 0;
   font-family: 'Montserrat-Thin', sans-serif;
+  background: #EEEEEE;
+  width: 100%;
+  padding: 10px 0;
 `;

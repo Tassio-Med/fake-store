@@ -22,13 +22,13 @@ export const Logo = styled.header`
   h3{
     font-size: 40px;
     font-weight: 600;
-    font-family: 'Montserrat-Bold', sans-serif;
+    font-family: 'Montserrat-Medium', sans-serif;
   }
   
   span {
     font-size: 20px;
     font-weight: 200;
-    font-family: 'Montserrat-Light', sans-serif;
+    font-family: 'Montserrat-Thin', sans-serif;
   }
 `;
 
@@ -42,6 +42,11 @@ export const CartBtn = styled.button`
   align-items: center;
   margin-right: 30px;
   border-style: inherit;
+  transition: background-color 0.4s ease;
+
+  &:hover {
+    background-color: #E6E6E6;
+  }
 
   span {
     color: black;
