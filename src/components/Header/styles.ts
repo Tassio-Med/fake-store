@@ -1,5 +1,6 @@
 import styled  from 'styled-components';
 
+
 export const Header = styled.header`
   width: 100%;
   height: 101px;
@@ -17,15 +18,17 @@ export const Logo = styled.header`
   color: #FFFF;
   line-height: 19px;
   margin-left: 30px;
-
+  
   h3{
     font-size: 40px;
     font-weight: 600;
+    font-family: 'Montserrat-Bold', sans-serif;
   }
-
+  
   span {
     font-size: 20px;
     font-weight: 200;
+    font-family: 'Montserrat-Light', sans-serif;
   }
 `;
 
