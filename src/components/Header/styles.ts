@@ -3,15 +3,20 @@ import styled  from 'styled-components';
 export const Header = styled.header`
   width: 100%;
   height: 101px;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
   background-color: #0F52BA;
   font-family: Monts;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 `;
 
 export const Logo = styled.header`
   color: #FFFF;
   line-height: 19px;
+  margin-left: 30px;
 
   h3{
     font-size: 40px;
@@ -30,7 +35,10 @@ export const CartBtn = styled.button`
   background-color: #FFFF;
   border-radius: 8px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  align-items: center;
+  margin-right: 30px;
+  border-style: inherit;
 
   span {
     color: black;

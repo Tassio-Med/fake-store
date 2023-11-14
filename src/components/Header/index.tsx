@@ -8,7 +8,7 @@ export default function Header() {
         <h3>MKS <span>Sistemas</span></h3>
       </H.Logo>
       <H.CartBtn>
-        <BsCartFill style={{ color: 'black'}}/>
+        <BsCartFill style={{ color: 'black', fontSize: '18px' }} />
         <span>0</span>
       </H.CartBtn>
     </H.Header>
