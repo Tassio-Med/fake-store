@@ -9,3 +9,10 @@ export const Home = styled.div`
   align-items: center;
   flex-direction: column;
 `;
+
+export const Copy = styled.h4`
+  font-size: 15px;
+  font-weight: 50;
+  margin: 50px 0 50px 0;
+  font-family: 'Montserrat-Thin', sans-serif;
+`;
