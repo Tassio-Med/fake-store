@@ -5,7 +5,7 @@ export default function Header() {
   return (
     <H.Header>
       <H.Logo>
-        <h3>MKS <span>Sistemas</span></h3>
+        <h3>Fake <span>Store</span></h3>
       </H.Logo>
       <H.CartBtn>
         <BsCartFill style={{ color: 'black', fontSize: '18px' }} />

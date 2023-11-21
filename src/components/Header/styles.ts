@@ -5,7 +5,7 @@ export const Header = styled.header`
   width: 100%;
   height: 101px;
   overflow: hidden;
-  position: fixed;
+  /* position: fixed; */
   top: 0;
   background-color: #0F52BA;
   font-family: Monts;
@@ -23,12 +23,14 @@ export const Logo = styled.header`
     font-size: 40px;
     font-weight: 600;
     font-family: 'Montserrat-Medium', sans-serif;
+    color: #fb8500;
   }
   
   span {
     font-size: 20px;
     font-weight: 200;
     font-family: 'Montserrat-Thin', sans-serif;
+    color: #fff;
   }
 `;
 
