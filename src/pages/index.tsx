@@ -8,12 +8,12 @@ export default function Home() {
   return (
    <H.Home>
     <Head>
-      <title>MKS</title>
+      <title>Store</title>
     </Head>
 
     <Header/>
     <Store/>
-    <H.Copy>MKS Sistemas &copy; Todos os direitos reservados</H.Copy>
+    <H.Copy>Online Store &copy; Todos os direitos reservados</H.Copy>
    </H.Home>
   )
 }
