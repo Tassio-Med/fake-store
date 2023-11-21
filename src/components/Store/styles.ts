@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Store = styled.div`
   width: 80%;
-  margin-top: 560px;
+  margin-top: 140px;
 `;
 
 export const ProductsGrid = styled.ul`
@@ -21,7 +21,7 @@ export const Card = styled.div`
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  height: 100%;
+  background-color: #FFFF;
 `;
 
 export const ProductItem = styled.li`
@@ -46,7 +46,8 @@ export const Photo = styled.div`
 export const Details = styled.div`
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  /* justify-content: space-between; */
   padding: 0 9px;
 
   h4 {
@@ -55,6 +56,14 @@ export const Details = styled.div`
     font-weight: 400;
     line-height: 19px;
   }
+
+  h5 {
+    color: green;
+    font-family: Montserrat-Light;
+    font-weight: 600;
+    line-height: 19px;
+  }
+
 `;
 
 export const Price = styled.p`
@@ -64,12 +73,24 @@ export const Price = styled.p`
   padding: 5px;
   height: 26px;
   border-radius: 5px;
-  background-color: #373737;
-  color: #fff;
-  font-weight: 700;
-  font-size: 15px;
+  font-family: Montserrat-Regular;
+  font-weight: 500;
+  font-size: 20px;
   margin-left: 10px;
   white-space: nowrap;
+  margin: 10px 0px;
+`;
+
+export const Frete = styled.div`
+  display: flex;
+  align-items: center;
+  margin: 8px 0;
+
+p {
+    color: green;
+    font-family: Montserrat-Medium;
+    margin-left: 10px;
+  }
 `;
 
 
@@ -81,7 +102,7 @@ export const Alert = styled.p`
 `;
 
 export const BuyBtn = styled.button`
-  background-color: #0F52BA;
+  background-color: #fb8500;
   color: #fff;
   width: 100%;
   border: transparent;
@@ -92,11 +113,10 @@ export const BuyBtn = styled.button`
   justify-content: center;
   align-items: center;
   margin: 0; 
-  margin-top: auto;
   transition: background-color 0.4s ease;
 
   &:hover{
-    background-color: #07439C;
+    background-color: #de7702;
   }
 
   span{
