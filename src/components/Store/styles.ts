@@ -15,7 +15,6 @@ export const ProductsGrid = styled.ul`
 `;
 
 export const Card = styled.div`
-  /* box-shadow: -1px 0px 9px -1px rgba(0,0,0,0.30); */
   box-shadow: 0px 0px 2px 1px rgba(0,0,0,0.10);
   border: transparent;
   border-radius: 10px;
