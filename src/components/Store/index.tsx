@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import Image from "next/image";
+import Link from 'next/link';
 import * as S from './styles';
 import { apiProducts } from '@/pages/services/api/api';
 import { Product } from '@/types/product.interface';
-import { FiShoppingBag } from 'react-icons/fi';
 import { FaTruck } from "react-icons/fa6";
 import { BsCartFill } from "react-icons/bs"
 
@@ -17,7 +17,7 @@ export default function Store() {
         const productsData = await apiProducts();
         setProducts(productsData);
       } catch (error) {
-        console.log('Erro aí hem', error);
+        console.log('Erro ao fazer fetch dos produtos', error);
       }
     };
 
@@ -33,11 +33,6 @@ export default function Store() {
     }
   }
   
-
-
-  // function handleAdd() {
-  // }
-
 
   return (
     <S.Store>
@@ -61,10 +56,12 @@ export default function Store() {
                   )}
                 </S.Details>
               </S.ProductItem>
-              <S.BuyBtn /* onClick={() => handleAdd(product)} */>
-                <BsCartFill style={{ color: 'white', fontSize: '20px' }} />
-                <span>COMPRAR</span>
-              </S.BuyBtn>
+              <Link href={`/products/${product.id}`} passHref>
+                <S.BuyBtn>
+                    <BsCartFill style={{ color: 'white', fontSize: '20px' }} />
+                    <span>COMPRAR</span>
+                </S.BuyBtn>
+              </Link>
             </S.Card>
           ))
         ) : (
