@@ -46,7 +46,7 @@ export default function Store() {
                 </S.Photo>
                 <S.Details>
                   <h4>{truncateDescription(product.title, 35)}</h4>
-                  <S.Price>R${(Number(product.price)).toFixed(2)}</S.Price>
+                  <S.Price>R$ {(Number(product.price)).toFixed(2)}</S.Price>
                   <h5>em 5x R${(Number(product.price) / 5).toFixed(2)} sem juros</h5>
                   {(Number(product.price)) > 50 && (
                     <S.Frete>
