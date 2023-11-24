@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import Image from "next/image";
+import { useCartContext } from '@/contexts/useCartContext';
 
 import * as P from './styles';
 import { FaTruck, FaCheck } from "react-icons/fa6";
@@ -14,6 +15,7 @@ const ProductDetailPage = () => {
   const router = useRouter();
   const { productId } = router.query;
   const [product, setProduct] = useState<Product | null>(null);
+  const { addToCart } = useCartContext();
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -81,7 +83,7 @@ const ProductDetailPage = () => {
           </P.InfoPayment>
           <P.Buttons>
             <P.BuyBtn>Comprar</P.BuyBtn>
-            <P.CartBtn>Adicionar ao carrinho</P.CartBtn>
+            <P.CartBtn onClick={() => addToCart(product)}>Adicionar ao carrinho</P.CartBtn>
           </P.Buttons>
         </P.Payment>
       </P.ProductGrid>
