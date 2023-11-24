@@ -51,7 +51,6 @@ export const Details = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  /* justify-content: space-between; */
   padding: 0 9px;
 
   h4 {
