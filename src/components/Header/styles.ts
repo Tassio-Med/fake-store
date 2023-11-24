@@ -34,26 +34,42 @@ export const Logo = styled.header`
   }
 `;
 
+
 export const CartBtn = styled.button`
-  width: 90px;
-  height: 45px;
+  padding: 20px;
   background-color: #FFFF;
-  border-radius: 8px;
+  /* border-radius: 50%; */
+  border-radius: 15px;
   display: flex;
   justify-content: space-around;
   align-items: center;
   margin-right: 30px;
   border-style: inherit;
   transition: background-color 0.4s ease;
+  position: relative;
 
   &:hover {
     background-color: #E6E6E6;
   }
 
+`;
+
+export const Number = styled.div`
+  position: absolute;
+  background-color: #fb8500;
+  padding: 5px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  bottom: -10%;
+  left: 30%;
+  transform: translateX(-100%);
+  box-shadow: 0px 0px 0px 3px rgba(15,82,186,1);
+
   span {
-    color: black;
-    font-size: 18px;
+    color: #fff;
+    font-size: 17px;
     font-weight: 700;
-    line-height: 21.94px;
   }
+
 `;
