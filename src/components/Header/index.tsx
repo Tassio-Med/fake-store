@@ -1,34 +1,15 @@
-// import { useState } from "react";
-// import { AnimatePresence, motion } from "framer-motion";
-// import { MdMenu, MdClose } from "react-icons/md";
-// import { BsCartFill } from "react-icons/bs"
-// import * as H from './styles';
-
-// export default function Header() {
-//   return (
-//     <H.Header>
-//       <H.Logo>
-//         <h3>Fake <span>Store</span></h3>
-//       </H.Logo>
-//       <H.CartBtn>
-//         <BsCartFill style={{ color: 'black', fontSize: '20px' }} />
-//         <H.Number>
-//           <span>16</span>
-//         </H.Number>
-//       </H.CartBtn>
-//     </H.Header>
-//   )
-// }
-
 import { useState } from "react";
+import { useCartContext } from "@/contexts/useCartContext";
+import { Cart } from "../Cart";
+
 import { AnimatePresence, motion } from "framer-motion";
 import { MdMenu, MdClose } from "react-icons/md";
 import { BsCartFill } from "react-icons/bs";
-import { Cart } from "../Cart";
 import * as H from './styles';
 
 export default function Header() {
   const [cartOpen, setCartOpen] = useState(false);
+  const { itemCount } = useCartContext();
 
   const toggleCart = () => {
     setCartOpen(!cartOpen);
@@ -72,7 +53,7 @@ export default function Header() {
         <H.CartBtn onClick={toggleCart}>
           <BsCartFill style={{ color: 'black', fontSize: '20px' }} />
           <H.Number>
-            <span>16</span>
+            <span>{itemCount}</span>
           </H.Number>
         </H.CartBtn>
       </H.Header>
