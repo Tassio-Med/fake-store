@@ -15,7 +15,7 @@ const ProductDetailPage = () => {
   const router = useRouter();
   const { productId } = router.query;
   const [product, setProduct] = useState<Product | null>(null);
-  const { addToCart } = useCartContext();
+  const { addToCart, isProductInCart } = useCartContext();
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -83,7 +83,12 @@ const ProductDetailPage = () => {
           </P.InfoPayment>
           <P.Buttons>
             <P.BuyBtn>Comprar</P.BuyBtn>
-            <P.CartBtn onClick={() => addToCart(product)}>Adicionar ao carrinho</P.CartBtn>
+            <P.CartBtn
+              onClick={() => addToCart(product)}
+              disabled={isProductInCart(product.id)}
+            >
+              {isProductInCart(product.id) ? "Produto no Carrinho" : "Adicionar ao carrinho"}
+            </P.CartBtn>
           </P.Buttons>
         </P.Payment>
       </P.ProductGrid>
