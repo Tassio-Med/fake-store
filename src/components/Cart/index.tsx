@@ -5,13 +5,23 @@ import { FaWindowClose } from "react-icons/fa";
 
 import * as A from "./styles";
 
-export const Cart = () => {
+interface CartProps {
+  onClose: () => void;
+}
+
+export const Cart: React.FC<CartProps> = ({ onClose }) => {
   const { cart } = useCartContext();
+
+  const handleClose = () => {
+    if (onClose) {
+      onClose();
+    }
+  };
 
   return (
     <A.Cart>
       <h2>Seus produtos</h2>
-      <button><FaWindowClose /></button>
+      <button onClick={handleClose}><FaWindowClose /></button>
       <A.Container>
         {cart.map((item: Product) => (
           <A.Lista key={item.id}>

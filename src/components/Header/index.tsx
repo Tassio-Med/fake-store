@@ -34,6 +34,10 @@ export default function Header() {
     setCartOpen(!cartOpen);
   };
 
+  const closeCart = () => {
+    setCartOpen(false);
+  };
+
   const cartVariants = {
     hidden: {
       opacity: 0,
@@ -82,7 +86,7 @@ export default function Header() {
             exit="exit"
             className="cart-modal"
           >
-            <Cart />
+            <Cart onClose={closeCart}/>
           </motion.div>
         )}
       </AnimatePresence>
