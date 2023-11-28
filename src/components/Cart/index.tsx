@@ -10,12 +10,16 @@ interface CartProps {
 }
 
 export const Cart: React.FC<CartProps> = ({ onClose }) => {
-  const { cart } = useCartContext();
+  const { cart, removeFromCart } = useCartContext();
 
   const handleClose = () => {
     if (onClose) {
       onClose();
     }
+  };
+
+  const handleRemoveItem = (productId: number) => {
+    removeFromCart(productId);
   };
 
   return (
@@ -29,7 +33,9 @@ export const Cart: React.FC<CartProps> = ({ onClose }) => {
               <p>{item.title}</p>
               <p>botão</p>
               <p>R$ {item.price}</p>
-              <button><MdDeleteForever /></button>
+              <button onClick={() => handleRemoveItem(item.id)}>
+                <MdDeleteForever />
+              </button>
             </A.Box>
           </A.Lista>
         ))}
