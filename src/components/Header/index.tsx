@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Link from "next/link";
 import { useCartContext } from "@/contexts/useCartContext";
 import { Cart } from "../Cart";
 
@@ -47,7 +48,9 @@ export default function Header() {
     <>
       <H.Header>
         <H.Logo>
-          <h3>Fake <span>Store</span></h3>
+          <Link href="/">
+            <h3>Fake <span>Store</span></h3>
+          </Link>
         </H.Logo>
 
         <H.CartBtn onClick={toggleCart}>
