@@ -163,6 +163,35 @@ export const SubtractButton = styled.button`
   border-radius: 5px 0px 0px 5px;
 `;
 
+
+
+export const PriceAndBtn = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0px;
+  width: 100%;
+  /* background-color: green; */
+  border: solid;
+  border-color: #d9d7d7;
+  border-width: 1px 0px 0px 0px;
+`;
+
+export const Total = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+  font-family: Montserrat-Regurlar, sans-serif;
+  font-weight: 700;
+
+  h4{
+    color: #949292;
+  }
+`;
+
 export const BuyBtn = styled.div`
   width: 100%;
   border-color: transparent;
@@ -171,7 +200,7 @@ export const BuyBtn = styled.div`
   justify-content: center;
   align-items: center;
   color: #fff;
-  font-family: Montserrat-Regular;
+  font-family: Montserrat-Regular, sans-serif;
   font-weight: 700;
   padding: 8px;
   background-color: #1366e8;
@@ -180,4 +209,3 @@ export const BuyBtn = styled.div`
     background-color: #0F52BA;
   }
 `;
-

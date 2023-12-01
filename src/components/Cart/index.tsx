@@ -71,8 +71,13 @@ export const Cart: React.FC<CartProps> = ({ onClose }) => {
           ))
         )}
       </A.Container>
-      <h4>Preço Total: R$ {totalPrice.toFixed(2)}</h4>
-      <A.BuyBtn>Finalizar Compra</A.BuyBtn>
+      <A.PriceAndBtn>
+        <A.Total>
+          <h4>Total</h4>
+          <h2>R$ {totalPrice.toFixed(2)}</h2>
+        </A.Total>
+        <A.BuyBtn>Finalizar Compra</A.BuyBtn>
+      </A.PriceAndBtn>
     </A.Cart>
   );
 };
