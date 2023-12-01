@@ -11,7 +11,7 @@ interface CartProps {
 }
 
 export const Cart: React.FC<CartProps> = ({ onClose }) => {
-  const { cart, removeFromCart, itemCount } = useCartContext();
+  const { cart, removeFromCart, itemCount, increaseQuantity, decreaseQuantity } = useCartContext();
 
   const handleClose = () => {
     if (onClose) {
@@ -22,6 +22,8 @@ export const Cart: React.FC<CartProps> = ({ onClose }) => {
   const handleRemoveItem = (productId: number) => {
     removeFromCart(productId);
   };
+
+  
 
   return (
     <A.Cart>
@@ -54,11 +56,11 @@ export const Cart: React.FC<CartProps> = ({ onClose }) => {
                   
                   <A.BtnAndPrice>
                     <A.QuantityButtons>
-                      <A.SubtractButton>-</A.SubtractButton>
-                      <input type="text" value="0" readOnly />
-                      <A.AddButton>+</A.AddButton>
+                      <A.SubtractButton onClick={() => decreaseQuantity(item.id)}>-</A.SubtractButton>
+                      <input type="text" value={item.quantity} readOnly />
+                      <A.AddButton onClick={() => increaseQuantity(item.id)}>+</A.AddButton>
                     </A.QuantityButtons>
-                    <p>R$ {item.price}</p>
+                    <p>R$ {item.price * (item.quantity)}</p>
                   </A.BtnAndPrice>
                 </A.Details>
               </A.Box>
