@@ -5,6 +5,8 @@ export interface CartContextProps {
   cart: Product[];
   addToCart: (product: Product) => void;
   removeFromCart: (productId: number) => void;
+  increaseQuantity: (productId: number) => void;
+  decreaseQuantity: (productId: number) => void;
   itemCount: number;
   isProductInCart: (productId: number) => boolean;
 }
@@ -22,18 +24,63 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
 
   const addToCart = (product: Product) => {
     if (!isProductInCart(product.id)) {
-      setCart((prevCart) => [...prevCart, product]);
+      setCart((prevCart) => [...prevCart, {...product, quantity: 1}]);
       setItemCount((prevCount) => prevCount + 1);
+    } else {
+      increaseQuantity(product.id)
     }
   };
 
+
   const removeFromCart = (productId: number) => {
-    setCart((prevCart) => prevCart.filter((item) => item.id !== productId));
-    setItemCount((prevCount) => Math.max(0, prevCount - 1));
+    const removedItem = cart.find((item) => item.id === productId);
+
+    if (removedItem) {
+      setCart((prevCart) => prevCart.filter((item) => item.id !== productId));
+      setItemCount((prevCount) => Math.max(0, prevCount - removedItem.quantity));
+    }
   };
 
+  
+const increaseQuantity = (productId: number) => {
+  setCart((prevCart) =>
+    prevCart.map((item) =>
+      item.id === productId ? { ...item, quantity: item.quantity + 1 } : item
+    )
+  );
+  setItemCount((prevCount) => prevCount + 1);
+  console.log('Cart after increase:', cart);
+};
+
+const decreaseQuantity = (productId: number) => {
+  const targetProduct = cart.find((item) => item.id === productId);
+
+  if (targetProduct && targetProduct.quantity > 1) {
+    setCart((prevCart) =>
+      prevCart.map((item) =>
+        item.id === productId
+          ? { ...item, quantity: item.quantity - 1 }
+          : item
+      )
+    );
+    setItemCount((prevCount) => prevCount - 1);
+  }
+};
+
+
+
   return(
-    <CartContext.Provider value={{ cart, addToCart, removeFromCart, itemCount, isProductInCart }}>
+    <CartContext.Provider
+      value={{
+        cart,
+        addToCart,
+        removeFromCart,
+        itemCount,
+        isProductInCart,
+        increaseQuantity,
+        decreaseQuantity
+      }}
+    >
       { children }
     </CartContext.Provider>
   )
