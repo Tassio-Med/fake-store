@@ -8,15 +8,16 @@ export interface CartContextProps {
   increaseQuantity: (productId: number) => void;
   decreaseQuantity: (productId: number) => void;
   itemCount: number;
+  totalPrice: number;
   isProductInCart: (productId: number) => boolean;
 }
 
 export const CartContext = createContext<CartContextProps | undefined>(undefined);
 
 export const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-
   const [cart, setCart] = useState<Product[]>([]);
   const [itemCount, setItemCount] = useState(0); 
+  const [totalPrice, setTotalPrice] = useState(0);
 
   const isProductInCart = (productId: number) => {
     return cart.some((item) => item.id === productId);
@@ -26,6 +27,7 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     if (!isProductInCart(product.id)) {
       setCart((prevCart) => [...prevCart, {...product, quantity: 1}]);
       setItemCount((prevCount) => prevCount + 1);
+      setTotalPrice((prevTotal) => prevTotal + product.price);
     } else {
       increaseQuantity(product.id)
     }
@@ -38,6 +40,7 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     if (removedItem) {
       setCart((prevCart) => prevCart.filter((item) => item.id !== productId));
       setItemCount((prevCount) => Math.max(0, prevCount - removedItem.quantity));
+      setTotalPrice((prevTotal) => prevTotal - removedItem.price * removedItem.quantity);
     }
   };
 
@@ -49,6 +52,7 @@ const increaseQuantity = (productId: number) => {
     )
   );
   setItemCount((prevCount) => prevCount + 1);
+  setTotalPrice((prevTotal) => prevTotal + cart.find((item) => item.id === productId)!.price);
   console.log('Cart after increase:', cart);
 };
 
@@ -64,6 +68,7 @@ const decreaseQuantity = (productId: number) => {
       )
     );
     setItemCount((prevCount) => prevCount - 1);
+    setTotalPrice((prevTotal) => prevTotal - targetProduct!.price);
   }
 };
 
@@ -76,6 +81,7 @@ const decreaseQuantity = (productId: number) => {
         addToCart,
         removeFromCart,
         itemCount,
+        totalPrice,
         isProductInCart,
         increaseQuantity,
         decreaseQuantity
