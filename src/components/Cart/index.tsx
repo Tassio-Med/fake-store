@@ -1,7 +1,7 @@
 import { Product } from '@/types/product.interface';
 import { useCartContext } from '@/contexts/useCartContext';
 import { MdDeleteForever } from "react-icons/md";
-import { IoClose } from "react-icons/io5";
+// import { IoClose } from "react-icons/io5";
 import Image from 'next/image';
 
 import * as A from "./styles";
@@ -27,16 +27,11 @@ export const Cart: React.FC<CartProps> = ({ onClose }) => {
 
   return (
     <A.Cart>
-      <A.CloseBox>
-        {/* <A.CloseBtn onClick={handleClose}>
-          <IoClose  style={{ fontSize: '25px', color: '#ffff' }}/>
-        </A.CloseBtn> */}
-      </A.CloseBox>
       <A.Top>
         <h2>Seus produtos</h2>
         <h3>Você possui {itemCount} produto(s) no carrinho</h3>
       </A.Top>
-      <A.Container>
+      <A.Container multipleProducts={cart.length > 2}>
         {cart.length === 0 ? (
           <p>Você não possui produtos no carrinho</p>
         ) : (

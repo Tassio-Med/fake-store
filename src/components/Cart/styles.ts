@@ -1,20 +1,18 @@
 import styled from "styled-components";
 
 export const Cart = styled.aside`
-  background-color: green;
-  z-index: 50;
-  width: 40%; 
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px;
+  position: fixed;
+  top: calc(100% + 95px);
+  position: fixed;
+  
+  width: 40%; 
   box-shadow: 0px 0px 2px 1px rgba(0,0,0,0.10);
   background-color: #fff;
   border-radius: 10px;
-  position: fixed;
-  top: calc(100% + 95px);
-  /* left: 50%; */
-  /* transform: translateX(-50%); */
 `;
 
 export const CloseBox = styled.div`
@@ -24,21 +22,6 @@ export const CloseBox = styled.div`
   align-items: center;
 `;
 
-export const CloseBtn = styled.button`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  border-style: inherit;
-  background-color: #fb8500;
-
-  &:hover{
-    background-color: #de7702;
-  }
-`;
-
 export const Top = styled.div`
   display: flex;
   flex-direction: column;
@@ -46,11 +29,32 @@ export const Top = styled.div`
   margin: 20px 0;
 `;
 
-export const Container = styled.div`
+export const Container = styled.div<{ multipleProducts: boolean }>`
   background-color: #fff;
   width: 100%;
+  height: ${(props) => (props.multipleProducts ? '270px' : 'auto')};
+  overflow-y: auto;
 
+  &::-webkit-scrollbar {
+    width: 10px; /* Largura da barra de rolagem */
+    border-radius: 10px; /* Raio da borda da barra de rolagem */
+  }
+  
+  &::-webkit-scrollbar-track {
+    background: #EBEBEB; /* Cor da área de fundo da barra de rolagem */
+    border-radius: 10px; /* Raio da borda da barra de rolagem */
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #fb8500; /* Cor do "ponteiro" da barra de rolagem */
+    border-radius: 5px; /* Raio da borda do "ponteiro" */
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: #de7702; /* Cor ao passar o mouse sobre a barra de rolagem */
+  }
 `;
+
 export const Lista = styled.ul`
   overflow: hidden;
   display: flex;
@@ -59,7 +63,7 @@ export const Lista = styled.ul`
   align-items: center;
   list-style: none;
   padding: 0;
-  margin: 30px 0px;
+  margin: 30px 10px;
   box-shadow: 0px 0px 2px 1px rgba(0,0,0,0.10);
   border-radius: 10px;
   
@@ -174,10 +178,10 @@ export const PriceAndBtn = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 0px;
+  padding: 10px 0px;
   width: 100%;
-  /* background-color: green; */
   border: solid;
+  margin-top: 15px;
   border-color: #d9d7d7;
   border-width: 1px 0px 0px 0px;
 `;
