@@ -8,7 +8,6 @@ export const Header = styled.header`
   position: fixed;
   top: 0;
   background-color: #0F52BA;
-  font-family: Monts;
   display: flex;
   justify-content: space-between;
   align-items: center;
