@@ -9,7 +9,6 @@ import { AiOutlineThunderbolt } from "react-icons/ai";
 import { MdVerifiedUser } from "react-icons/md";
 import { apiProductById } from '../services/api/api';
 import { Product } from '@/types/product.interface';
-import Header from '@/components/Header';
 
 const ProductDetailPage = () => {
   const router = useRouter();
@@ -41,7 +40,6 @@ const ProductDetailPage = () => {
 
   return (
     <P.Container>
-      <Header/>
       <P.ProductGrid>
         <P.Photo>
           <Image src={product.image} alt={product.title} width={250} height={250} />

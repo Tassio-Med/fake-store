@@ -5,7 +5,7 @@ export const Container = styled.div`
   flex-direction: column;
   background-color: #EBEBEB;
   height: 100vh;
-`;
+  `;
 
 export const ProductGrid = styled.ul`
   display: grid;
@@ -13,7 +13,7 @@ export const ProductGrid = styled.ul`
   gap: 50px;
   list-style: none;
   padding: 20px;
-  margin: 25px;
+  margin: 150px 25px 25px 25px;
   background-color: #fff;
   border-radius: 5px;
 `;
