@@ -14,7 +14,7 @@ export const Cart = styled.aside`
   background-color: #fff;
   border-radius: 10px;
   z-index: 999;
-  animation: slideIn 0.2s ease-in-out; /* Adicione a animação CSS aqui */
+  animation: slideIn 0.2s ease-in-out; 
   
   @keyframes slideIn {
     from {
