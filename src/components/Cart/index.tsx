@@ -28,9 +28,9 @@ export const Cart: React.FC<CartProps> = ({ onClose }) => {
   return (
     <A.Cart>
       <A.CloseBox>
-        <A.CloseBtn onClick={handleClose}>
+        {/* <A.CloseBtn onClick={handleClose}>
           <IoClose  style={{ fontSize: '25px', color: '#ffff' }}/>
-        </A.CloseBtn>
+        </A.CloseBtn> */}
       </A.CloseBox>
       <A.Top>
         <h2>Seus produtos</h2>

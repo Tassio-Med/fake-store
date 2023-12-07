@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Cart = styled.aside`
   background-color: green;
   z-index: 50;
-  width: 50%; 
+  width: 40%; 
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -11,6 +11,10 @@ export const Cart = styled.aside`
   box-shadow: 0px 0px 2px 1px rgba(0,0,0,0.10);
   background-color: #fff;
   border-radius: 10px;
+  position: fixed;
+  top: calc(100% + 95px);
+  /* left: 50%; */
+  /* transform: translateX(-50%); */
 `;
 
 export const CloseBox = styled.div`

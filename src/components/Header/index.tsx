@@ -22,19 +22,19 @@ export default function Header() {
 
   const cartVariants = {
     hidden: {
-      opacity: 0,
+      // opacity: 1,
       x: "100%",
     },
     visible: {
       opacity: 1,
-      x: 0,
+      x: "57.5%",
       transition: {
         duration: 0.5,
         ease: "easeInOut",
       },
     },
     exit: {
-      opacity: 0,
+      // opacity: 0,
       x: "100%",
       transition: {
         duration: 0.5,

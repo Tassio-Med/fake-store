@@ -5,7 +5,7 @@ export const Header = styled.header`
   width: 100%;
   height: 101px;
   overflow: hidden;
-  /* position: fixed; */
+  position: fixed;
   top: 0;
   background-color: #0F52BA;
   font-family: Monts;
