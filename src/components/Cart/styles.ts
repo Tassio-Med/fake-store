@@ -6,13 +6,14 @@ export const Cart = styled.aside`
   align-items: center;
   padding: 20px;
   position: fixed;
-  top: calc(100% + 95px);
+  top: 95px;
+  right: 30px;
   position: fixed;
-  
   width: 40%; 
   box-shadow: 0px 0px 2px 1px rgba(0,0,0,0.10);
   background-color: #fff;
   border-radius: 10px;
+  z-index: 999;
 `;
 
 export const CloseBox = styled.div`
@@ -113,7 +114,6 @@ export const Details = styled.div`
   align-items: center;
   margin: 0;
   font-family: Montserrat-Thin, sans-serif;
-  /* background-color: blue; */
 
   h4{
     margin-bottom: 15px;
@@ -137,7 +137,6 @@ export const QuantityButtons = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  /* background-color: green; */
 
   button {
     padding: 5px;

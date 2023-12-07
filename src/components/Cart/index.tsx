@@ -1,7 +1,6 @@
 import { Product } from '@/types/product.interface';
 import { useCartContext } from '@/contexts/useCartContext';
 import { MdDeleteForever } from "react-icons/md";
-// import { IoClose } from "react-icons/io5";
 import Image from 'next/image';
 
 import * as A from "./styles";
