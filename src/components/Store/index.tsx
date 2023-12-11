@@ -1,29 +1,16 @@
-import { useEffect, useState } from 'react';
 import Image from "next/image";
 import Link from 'next/link';
 import * as S from './styles';
-import { apiProducts } from '@/pages/services/api/api';
 import { Product } from '@/types/product.interface';
 import { FaTruck } from "react-icons/fa6";
 import { BsCartFill } from "react-icons/bs"
 
-export default function Store() {
-  const [products, setProducts] = useState<Product[]>([]);
-  const [addProduct, setAddProduct] = useState([]);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const productsData = await apiProducts();
-        setProducts(productsData);
-      } catch (error) {
-        console.log('Erro ao fazer fetch dos produtos', error);
-      }
-    };
+interface StoreProps {
+  products: Product[];
+}
 
-    fetchData();
-  }, []);
-
+export default function Store({ products }: StoreProps) {
 
   function truncateDescription(title: string, maxLength: number): string {
     if (title.length <= maxLength) {
@@ -33,7 +20,6 @@ export default function Store() {
     }
   }
   
-
   return (
     <S.Store>
       <S.ProductsGrid>
