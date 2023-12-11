@@ -1,5 +1,4 @@
-import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
+import { GetServerSideProps } from 'next';
 import Image from "next/image";
 import { useCartContext } from '@/contexts/useCartContext';
 
@@ -10,29 +9,12 @@ import { MdVerifiedUser } from "react-icons/md";
 import { apiProductById } from '../services/api/api';
 import { Product } from '@/types/product.interface';
 
-const ProductDetailPage = () => {
-  const router = useRouter();
-  const { productId } = router.query;
-  const [product, setProduct] = useState<Product | null>(null);
+interface ProductDetailProps {
+  product: Product;
+}
+
+const ProductDetailPage = ({ product }: ProductDetailProps) => {
   const { addToCart, isProductInCart } = useCartContext();
-
-  useEffect(() => {
-    const fetchProduct = async () => {
-      try {
-        if (typeof productId === 'string') {
-          console.log(productId);
-          const productData = await apiProductById(parseInt(productId, 10)); 
-          setProduct(productData);
-        }
-      } catch (error) {
-        console.error('Erro ao fazer fetch dos produtos:', error);
-      }
-    };
-
-    if (productId) {
-      fetchProduct();
-    }
-  }, [productId]);
 
   if (!product) {
     return <p>Carregando detalhes do produto...</p>;
@@ -100,4 +82,29 @@ const ProductDetailPage = () => {
   );
 };
 
+export const getServerSideProps: GetServerSideProps = async ({ params }) => {
+  try {
+    if (params?.productId) {
+      const productId = parseInt(params.productId as string, 10);
+      const product = await apiProductById(productId);
+      
+      return {
+        props: {
+          product,
+        },
+      };
+    }
+
+    return {
+      notFound: true,
+    };
+  } catch (error) {
+    console.error('Erro ao fazer fetch do produto:', error);
+    return {
+      notFound: true,
+    };
+  }
+};
+
 export default ProductDetailPage;
+
