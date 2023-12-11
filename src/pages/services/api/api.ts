@@ -20,3 +20,14 @@ export const apiProductById = async (productId: number): Promise<Product>  => {
     throw error;
   }
 };
+
+export const apiProductsByCategory = async (category: string, limit = 10): Promise<Product[]> => {
+  try {
+    const response = await axios.get(`https://fakestoreapi.com/products/category/${category}?limit=${limit}`);
+    return response.data;
+  } catch (error) {
+    console.error(`Error ao fazer fetch dos produtos da categoria ${category}:`, error);
+    throw error;
+  }
+};
+
