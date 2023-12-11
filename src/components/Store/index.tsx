@@ -5,7 +5,6 @@ import { Product } from '@/types/product.interface';
 import { FaTruck } from "react-icons/fa6";
 import { BsCartFill } from "react-icons/bs"
 
-
 interface StoreProps {
   products: Product[];
 }
