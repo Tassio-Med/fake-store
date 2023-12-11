@@ -42,7 +42,13 @@ const ProductDetailPage = () => {
     <P.Container>
       <P.ProductGrid>
         <P.Photo>
-          <Image src={product.image} alt={product.title} width={250} height={250} />
+          <Image
+            src={product.image}
+            alt={product.title}
+            width={250}
+            height={250}
+            loading="lazy"
+          />
         </P.Photo>
         <P.Details>
           <h2>{product.title}</h2>

@@ -27,7 +27,13 @@ export default function Store({ products }: StoreProps) {
             <S.Card key={product.id}>
               <S.ProductItem>
                 <S.Photo>
-                  <Image src={product.image} alt={product.title} width={150} height={150} />
+                  <Image
+                    src={product.image}
+                    alt={product.title}
+                    width={150}
+                    height={150}
+                    loading="lazy"
+                  />
                 </S.Photo>
                 <S.Details>
                   <h4>{truncateDescription(product.title, 35)}</h4>
