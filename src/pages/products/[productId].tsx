@@ -6,14 +6,16 @@ import * as P from './styles';
 import { FaTruck, FaCheck } from "react-icons/fa6";
 import { AiOutlineThunderbolt } from "react-icons/ai";
 import { MdVerifiedUser } from "react-icons/md";
-import { apiProductById } from '../services/api/api';
+import { apiProductById, apiProductsByCategory } from '../services/api/api';
+import ProductSlider from '@/components/ProductSlider';
 import { Product } from '@/types/product.interface';
 
 interface ProductDetailProps {
   product: Product;
+  relatedProducts: Product[];
 }
 
-const ProductDetailPage = ({ product }: ProductDetailProps) => {
+const ProductDetailPage = ({ product, relatedProducts }: ProductDetailProps) => {
   const { addToCart, isProductInCart } = useCartContext();
 
   if (!product) {
@@ -78,19 +80,24 @@ const ProductDetailPage = ({ product }: ProductDetailProps) => {
           </P.Buttons>
         </P.Payment>
       </P.ProductGrid>
+        <ProductSlider products={relatedProducts} />
     </P.Container>
   );
 };
+
 
 export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   try {
     if (params?.productId) {
       const productId = parseInt(params.productId as string, 10);
       const product = await apiProductById(productId);
-      
+
+      const relatedProducts = await apiProductsByCategory(product.category, 10);
+
       return {
         props: {
           product,
+          relatedProducts: relatedProducts.filter((p) => p.id !== productId),
         },
       };
     }
@@ -105,6 +112,7 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
     };
   }
 };
+
 
 export default ProductDetailPage;
 

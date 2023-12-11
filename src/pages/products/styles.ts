@@ -3,8 +3,10 @@ import styled from "styled-components";
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-color: #EBEBEB;
-  height: 100vh;
+  height: 100%;
   `;
 
 export const ProductGrid = styled.ul`
@@ -13,7 +15,7 @@ export const ProductGrid = styled.ul`
   gap: 50px;
   list-style: none;
   padding: 20px;
-  margin: 150px 25px 25px 25px;
+  margin: 120px 25px 5px 25px;
   background-color: #fff;
   border-radius: 5px;
 `;
