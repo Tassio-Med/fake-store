@@ -1,7 +1,5 @@
-// components/ProductSlider.tsx
 import React from 'react';
 import Image from 'next/image';
-// import { motion } from 'framer-motion';
 import { Product } from '@/types/product.interface';
 import * as S from "./styles"
 import ProductCard from "../ProductCard";
