@@ -33,6 +33,10 @@ export const Logo = styled.header`
   }
 `;
 
+export const Results = styled.div`
+  width: 100%;
+`;
+
 
 export const CartBtn = styled.button`
   padding: 20px;
