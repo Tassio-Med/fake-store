@@ -21,7 +21,7 @@ export const apiProductById = async (productId: number): Promise<Product>  => {
   }
 };
 
-export const apiProductsByCategory = async (category: string, limit = 10): Promise<Product[]> => {
+export const apiProductsByCategory = async (category: string, limit = 24): Promise<Product[]> => {
   try {
     const response = await axios.get(`https://fakestoreapi.com/products/category/${category}?limit=${limit}`);
     return response.data;
