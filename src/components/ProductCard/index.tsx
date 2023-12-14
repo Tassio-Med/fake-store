@@ -11,13 +11,6 @@ interface ProductCardProps {
 }
 
 const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
-  function truncateDescription(title: string, maxLength: number): string {
-    if (title.length <= maxLength) {
-      return title;
-    } else {
-      return title.substring(0, maxLength) + '...';
-    }
-  }
 
   return (
     <S.Card>
@@ -26,7 +19,12 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           <Image src={product.image} alt={product.title} width={150} height={150} loading="lazy" />
         </S.Photo>
         <S.Details>
-          <h4>{truncateDescription(product.title, 35)}</h4>
+          <h4>
+            {product.title.split(' ').length > 4
+                ? product.title.split(' ').slice(0, 3).join(' ') + '...'
+                : product.title
+            }
+          </h4>
           <S.Price>R$ {(Number(product.price)).toFixed(2)}</S.Price>
           <h5>em 5x R${(Number(product.price) / 5).toFixed(2)} sem juros</h5>
           {(Number(product.price)) > 50 && (
