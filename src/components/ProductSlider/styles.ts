@@ -1,25 +1,53 @@
 import styled from "styled-components";
-import { motion } from 'framer-motion';
 
-export const MotionDiv = styled(motion.div)`
+export const MotionDiv = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width:96%;
-  /* box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.10); */
-  background-color: #fff;
+  /* background-color: #fff; */
+  width: 98%; 
   border-radius: 5px;
   margin: 10px;
+  padding: 10px;
 `;
 
-export const Product = styled.div`
+export const BoxSlide = styled.div`
   display: flex;
-  flex-direction: column;
+  justify-content: space-around;
   align-items: center;
-  padding: 20px;
-  /* width: 50%;  */
+  width: 100%;
+`;
+
+export const ProductsSlide = styled.div`
+  display: flex;
+  gap: 20px; 
+  width: 100%;
+  padding: 5px 2px;
+  overflow-x: hidden; 
+  white-space: nowrap;  
+  
+  div{
+    display: flex;
+    width: 100%; 
+  }
+`;
+
+export const ArrowButton = styled.button`
+  border-radius: 50%;
+  z-index: 20;
+  border-style: solid;
+  border-color: transparent;
+  width: 65px;
+  height: 65px;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   box-shadow: 0px 0px 2px 1px rgba(0,0,0,0.10);
   background-color: #fff;
-  border-radius: 10px;
-  margin: 10px;
+  
+  &:hover{
+    /* background-color: #fff; */
+    box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.20);
+  }
 `;
