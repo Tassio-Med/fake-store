@@ -1,7 +1,7 @@
 import styled  from 'styled-components';
 
 export const Home = styled.div`
-  background-color: #EBEBEB;
+  /* background-color: #EBEBEB; */
   width: 100%;
   height: 100%;
   display: flex;
@@ -16,7 +16,7 @@ export const Copy = styled.h4`
   font-size: 12px;
   font-weight: 400;
   line-height: 14px;
-  margin: 50px 0 50px 0;
+  margin: 20px 0 25px 0;
   font-family: 'Montserrat-Thin', sans-serif;
   background: #EEEEEE;
   width: 100%;
