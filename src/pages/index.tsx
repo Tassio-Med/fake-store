@@ -1,5 +1,6 @@
 import Head from "next/head"
 import Store from "@/components/Store"
+import Footer from "@/components/Footer";
 import * as H from '../../styles/home'
 import { GetServerSideProps } from 'next';
 import { apiProducts } from '@/pages/services/api/api';
@@ -34,7 +35,7 @@ export default function Home({ products }: HomeProps) {
         <title>Store</title>
       </Head>
       <Store products={products} />
-      <H.Copy>Online Store &copy; Todos os direitos reservados</H.Copy>
+      <Footer />
     </H.Home>
   );
 }
