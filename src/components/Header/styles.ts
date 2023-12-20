@@ -4,13 +4,14 @@ import styled  from 'styled-components';
 export const Header = styled.header`
   width: 100%;
   height: 101px;
-  overflow: hidden;
+  /* overflow: hidden; */
   position: fixed;
   top: 0;
   background-color: #0F52BA;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  /* z-index: 1; */
 `;
 
 export const Logo = styled.header`
